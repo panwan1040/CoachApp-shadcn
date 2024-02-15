@@ -8,6 +8,7 @@ import { AlertCircle, ChevronRight, LayoutDashboard, User } from "lucide-react";
 import { Nav } from "@/components/ui/nav";
 import { Button } from "@/components/ui/button";
 import useWindowWidth from "@/lib/window-width";
+import { UserButton } from "@clerk/nextjs";
 
 interface Props {}
 
@@ -22,7 +23,7 @@ const SideNavbar = ({}: Props) => {
   }
 
   return (
-    <div className="relative min-w-[80px] border-r px-3 pb-10 pt-24">
+    <div className="relative min-w-[80px] border-r px-3 pb-10 pt-24 ">
       {!mobileWidth && (
         <div className="absolute right-[-20px] top-7">
           <Button 
@@ -33,7 +34,18 @@ const SideNavbar = ({}: Props) => {
               <ChevronRight />
             </Button>
         </div>
+        
       )}
+      <div className="pb-3 mt-auto flex items-center flex-col gap-y-4">
+              <UserButton 
+                  afterSignOutUrl="/sign-in"
+                  appearance={{
+                      elements:{
+                          avatarBox: "h-[48px] w-[48px]"
+                      }
+                  }}
+              />
+      </div>
       <Nav
         isCollapsed={mobileWidth ? true : isCollapsed}
         links={[
@@ -57,6 +69,7 @@ const SideNavbar = ({}: Props) => {
           },
         ]}
       />
+      
     </div>
   );
 };
