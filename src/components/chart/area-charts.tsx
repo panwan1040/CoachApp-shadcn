@@ -1,5 +1,5 @@
 import ReactApexChart from "react-apexcharts";
-import { ChartData } from "../fn/useChartData";
+import { ChartData } from "@/components/fn/useChartData";
 
 interface AreaChartProps{
   series: {

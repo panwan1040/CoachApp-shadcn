@@ -37,7 +37,7 @@ const MainPageProvider = () => {
     const { uniqueSeries } = GetUniqeData();
     const { chartData } = useChartData();
 
-    console.log(chartData);
+    // console.log(chartData);
     
     const teamUpdateData: UpdateRecentProps[] = [];
 
@@ -55,7 +55,7 @@ const MainPageProvider = () => {
         };
     
         loadTeams(); // เรียกใช้ฟังก์ชันเมื่อ component ถูกโหลด
-      }, []); // อาร์เรย์ว่างแสดงถึงการทำงานเพียงครั้งเดียวเมื่อ component mount
+    }, []); // อาร์เรย์ว่างแสดงถึงการทำงานเพียงครั้งเดียวเมื่อ component mount
     
       if (isLoading) {
         return <div>Loading...</div>;
@@ -67,7 +67,7 @@ const MainPageProvider = () => {
     uniqueSeries.forEach((item,index) => {
         const avg = calculateAvgOfLastTen(item.data);
 
-        // console.log(item.data);
+        // console.log(item);
         allHeartRateSensorOfTen = allHeartRateSensorOfTen.concat(item.data);
         // console.log(allHeartRateSensorOfTen);
 
@@ -76,6 +76,7 @@ const MainPageProvider = () => {
 
         teamUpdateData.push({
             name: teams[index].name,
+            oldName: item.name,
             des: calculateZone(calculateMaxHR(teams[index].age, teams[index].gender),item.data[item.data.length - 1]),
             heartRate: item.data[item.data.length - 1].toFixed(2),
             zoneNum: calculateZoneNumber(calculateMaxHR(teams[index].age, teams[index].gender),item.data[item.data.length - 1]),
@@ -157,6 +158,7 @@ const MainPageProvider = () => {
                         <UpdateRecent
                             key={i}
                             name={d.name}
+                            oldName={d.oldName}
                             heartRate={d.heartRate}
                             des={d.des}
                             zoneNum={d.zoneNum}

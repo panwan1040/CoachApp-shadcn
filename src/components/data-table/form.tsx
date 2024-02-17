@@ -96,7 +96,7 @@ export function ProfileForm( {
     form.reset();
     location.reload();
 
-    console.log(values);
+    // console.log(values);
   };
 
   return (

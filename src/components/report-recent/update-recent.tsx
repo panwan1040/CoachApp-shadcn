@@ -1,12 +1,12 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { calculateMaxHR, calculateZoneNumber } from "./fn/cal";
 import { Activity } from "lucide-react";
 
 
 export interface UpdateRecentProps {
     name: string;
+    oldName?: string,
     heartRate: string;
     des: string;
     zoneNum: number;
@@ -16,6 +16,7 @@ export interface UpdateRecentProps {
 
 const UpdateRecent = ({
     name,
+    oldName,
     heartRate,
     des,
     zoneNum,
@@ -29,14 +30,15 @@ const UpdateRecent = ({
                     <img src={`https://api.dicebear.com/7.x/bottts-neutral/svg?seed=${name}`} width={200} height={200} alt="avatar" />
                 </div>
                 <div className="text-sm">
-                    <p className="font-semibold">{name}</p>
+                    
+                    <p className="font-semibold">{name} <span className="font-mono text-red-300">({oldName})</span></p>
                     <div className={cn(
                         "text-ellipsis overflow-hidden whitespace-nowrap w-[120px] sm:w-auto font-medium",
-                        calculateZoneNumber(calculateMaxHR(age, gender),parseInt(heartRate, 10)) === 1 ? "text-[#898e91]" :
-                        calculateZoneNumber(calculateMaxHR(age, gender),parseInt(heartRate, 10)) === 2 ? "text-[#3d54df]" :
-                        calculateZoneNumber(calculateMaxHR(age, gender),parseInt(heartRate, 10)) === 3 ? "text-[#19b744]" :
-                        calculateZoneNumber(calculateMaxHR(age, gender),parseInt(heartRate, 10)) === 4 ? "text-[#e9a401]" :
-                        calculateZoneNumber(calculateMaxHR(age, gender),parseInt(heartRate, 10)) === 5 ? "text-[#d6101a]" :
+                        zoneNum === 1 ? "text-[#898e91]" :
+                        zoneNum === 2 ? "text-[#3d54df]" :
+                        zoneNum === 3 ? "text-[#19b744]" :
+                        zoneNum === 4 ? "text-[#e9a401]" :
+                        zoneNum === 5 ? "text-[#d6101a]" :
                         "text-gray-400"
                     )}>
                         { des }
