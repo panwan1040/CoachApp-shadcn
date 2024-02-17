@@ -5,7 +5,7 @@ import { getDatabase, ref, onValue } from "firebase/database";
 import { app } from "@/lib/firebase";
 import { Team, fetchTeams } from "@/components/report-recent/fn/db-getname";
 
-interface ChartData {
+export interface ChartData {
   name: string;
   data: { x: string; y: number }[];
 }
