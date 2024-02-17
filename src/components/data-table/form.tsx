@@ -116,19 +116,7 @@ export function ProfileForm( {
           )}
         /> */}
 
-        <FormField
-          control={form.control}
-          name="age"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>age</FormLabel>
-              <FormControl>
-                <Input {...field} type="number" pattern="[0-9]*" min={1} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+        
 
         <FormField
           control={form.control}
@@ -138,6 +126,20 @@ export function ProfileForm( {
               <FormLabel>name</FormLabel>
               <FormControl>
                 <Input {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        <FormField
+          control={form.control}
+          name="age"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>age</FormLabel>
+              <FormControl>
+                <Input {...field} type="number" pattern="[0-9]*" min={1} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -166,7 +168,7 @@ export function ProfileForm( {
           )}
         />
         <SheetFooter>
-        <Button type="submit"  >Submit</Button>
+        <Button type="submit"  >Save</Button>
           {/* <SheetClose asChild>
             
           </SheetClose> */}

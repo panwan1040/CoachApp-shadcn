@@ -1,6 +1,5 @@
 "use client";
 // นำเข้า modules ที่จำเป็น
-import { useEffect, useState } from 'react';
 import { app } from "@/lib/firebase";
 import { collection, getDocs, getFirestore } from "firebase/firestore";
 

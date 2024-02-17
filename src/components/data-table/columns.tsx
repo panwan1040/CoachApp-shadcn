@@ -61,7 +61,7 @@ export const columns: ColumnDef<DataType>[] = [
             <SheetHeader>
               <SheetTitle>Edit profile</SheetTitle>
               <SheetDescription>
-                Make changes to your profile here. Click save when you're done.
+                โปรดตรวจสอบให้แน่ใจก่อนกดบันทึก
               </SheetDescription>
             </SheetHeader>
             <div className="grid gap-4 py-4">
