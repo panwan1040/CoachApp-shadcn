@@ -52,12 +52,7 @@ const SideNavbar = ({}: Props) => {
             icon: User,
             variant: "ghost",
           },
-          {
-            title: "Sent",
-            href: "/x",
-            icon: AlertCircle,
-            variant: "ghost",
-          },
+
         ]}
       />
       
