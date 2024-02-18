@@ -1,22 +1,23 @@
 "use client";
 import React, { useState } from "react";
 
-import { AlertCircle, ChevronRight, LayoutDashboard, User } from "lucide-react";
+import { ChevronRight, LayoutDashboard, User } from "lucide-react";
 
 
 
 import { Nav } from "@/components/ui/nav";
 import { Button } from "@/components/ui/button";
-import useWindowWidth from "@/lib/window-width";
-import { UserButton } from "@clerk/nextjs";
+import useResponsiveWidth from "@/lib/useResponsiveWidth";
 
 interface Props {}
 
 const SideNavbar = ({}: Props) => {
   const [isCollapsed, setIsCollapsed] = useState(false);
 
-  const onlyWidth = useWindowWidth();
-  const mobileWidth = onlyWidth < 768;
+  const onlyWidth = useResponsiveWidth();
+  console.log(onlyWidth);
+  
+  const mobileWidth = onlyWidth !== undefined && onlyWidth < 768;
 
   function toggleSidebar() {
     setIsCollapsed(!isCollapsed);

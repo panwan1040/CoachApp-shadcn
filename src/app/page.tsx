@@ -2,11 +2,6 @@
 import PageTitle from "@/components/PageTitle";
 import MainPageProvider from "@/components/report-recent/main-provider";
 
-interface SeriesItem {
-  name: string;
-  data: number[];
-}
-
 
 export default function Home() {
  

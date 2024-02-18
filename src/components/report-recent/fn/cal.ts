@@ -1,4 +1,4 @@
-
+"use client";
 
 export const calculateMaxHR = (age: number, gender: string): number => {
     // ผู้ชาย : MaxHR = 214 – (0.8 x อายุ)

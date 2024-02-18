@@ -1,3 +1,4 @@
+"use client";
 export const calculateAvgOfLastTen = (data: number[]): number => {
   // ตรวจสอบถ้าข้อมูลมีมากกว่า 10 รายการ, ใช้เฉพาะ 10 รายการสุดท้าย
   const lastTenItems = data.length > 10 ? data.slice(-10) : data;

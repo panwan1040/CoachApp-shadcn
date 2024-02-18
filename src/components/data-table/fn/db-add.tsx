@@ -1,3 +1,4 @@
+"use client";
 import { db } from "@/lib/firebase"; // แก้ไขตาม path ของไฟล์ที่เหมาะสม
 import { collection, addDoc } from "firebase/firestore";
 
