@@ -18,7 +18,7 @@ import {
     calculatePercentageChange,
 } from "@/components/fn/CalFn";
 import { GetUniqeData } from "@/components/fn/getUniqeData";
-import { AreaChart } from "@/components/chart/area-charts";
+import AreaChart from "@/components/chart/area-charts";
 import { useChartData } from "@/components/fn/useChartData";
 import { Team, fetchTeams } from "./fn/db-getname";
 import { useEffect, useState } from "react";
@@ -28,8 +28,6 @@ import { calculateMaxHR, calculateZone, calculateZoneNumber } from "./fn/cal";
 const MainPageProvider = () => {
     const [teams, setTeams] = useState<Team[]>([]);
     const [isLoading, setIsLoading] = useState(true);
-
-    
     
     const avgTenList: number[] = [];
     let allHeartRateSensorOfTen: number[] = [];

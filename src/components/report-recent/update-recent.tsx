@@ -1,6 +1,5 @@
 import { cn } from "@/lib/utils";
 import { Activity } from "lucide-react";
-import Image from "next/image";
 
 export interface UpdateRecentProps {
   name: string;

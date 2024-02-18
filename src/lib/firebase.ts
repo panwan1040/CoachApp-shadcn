@@ -6,7 +6,7 @@ import * as dotenv from 'dotenv';
 dotenv.config();
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
-console.log(process.env.NEXT_PUBLIC_API_KEY);
+// console.log(process.env.NEXT_PUBLIC_API_KEY);
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
